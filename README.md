@@ -1,2 +1,2 @@
-# Laboratorio_1
+# Primer Laboratorio - Curso LRT4102
 laboratorio 1
