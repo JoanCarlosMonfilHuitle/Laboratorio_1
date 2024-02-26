@@ -3,7 +3,7 @@ Python es un lengujae de programacion que tiene un extenso uso, por lo cual se h
 ## Variables que usa Pyton
 Python es un lenguaje de programación de tipado dinámico. Algunos de los tipos de variables de Python son:
 
-	**Enteros (int):** Son números enteros, positivos o negativos, sin decimales 	|(1,2,3...)
+	__Enteros (int):__ Son números enteros, positivos o negativos, sin decimales 	|(1,2,3...)
    
 	- **Flotantes (float):** Son números decimales, positivos o negativos (1.1, -1.1).
    
