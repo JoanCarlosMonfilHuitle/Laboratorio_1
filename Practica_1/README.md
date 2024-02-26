@@ -5,7 +5,7 @@ Python es un lenguaje de programación de tipado dinámico. Algunos de los tipos
 
 	- ** Enteros (int): ** Son números enteros, positivos o negativos, sin decimales 	|(1,2,3...)
    
-	- ** Flotantes (float): ** Son números decimales, positivos o negativos (1.1, -1.1).
+	- **Flotantes (float):** Son números decimales, positivos o negativos (1.1, -1.1).
    
 	- ** Cadenas de caracteres (str): ** Es texto (Robotica).
 
