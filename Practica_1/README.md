@@ -3,71 +3,71 @@ Python es un lengujae de programacion que tiene un extenso uso, por lo cual se h
 ## Variables que usa Pyton
 Python es un lenguaje de programación de tipado dinámico. Algunos de los tipos de variables de Python son:
 
-	- **Enteros (int):** Son números enteros, positivos o negativos, sin decimales 	|(1,2,3...)
+	- Enteros (int): Son números enteros, positivos o negativos, sin decimales (1,2,3...)
    
-	**Flotantes (float):** Son números decimales, positivos o negativos (1.1, -1.1).
+	- Flotantes (float): Son números decimales, positivos o negativos (1.1, -1.1).
    
-	- ** Cadenas de caracteres (str): ** Es texto (Robotica).
+	- Cadenas de caracteres (str): Es texto (Robotica).
 
-	- ** Booleanos (bool): ** Son valores de verdad:`True` (verdadero) o `False` (falso).
+	- Booleanos (bool): Son valores de verdad:`True` (verdadero) o `False` (falso).
    
-   	- ** Listas: ** Son colecciones ordenadas y modificables de elementos de cualquier tipo (lista = [1, 2, 3, 4]).
+   	- Listas: Son colecciones ordenadas y modificables de elementos de cualquier tipo (lista = [1, 2, 3, 4]).
 
-	- ** Tuplas: ** Tambien son colecciones ordenadas e inmutables de elementos de cualquier tipo (tupla = (1, 2, 3)).
+	- Tuplas: Tambien son colecciones ordenadas e inmutables de elementos de cualquier tipo (tupla = (1, 2, 3)).
 
-	 - ** Conjuntos (set): ** Igual sonj colecciones no ordenadas de elementos únicos (conjunto = {1, 2, 3}).
+	- Conjuntos (set): Igual sonj colecciones no ordenadas de elementos únicos (conjunto = {1, 2, 3}).
 
 Estos son algunos de los tipos de variables más utilizados en Python.
 
 
 ## BUCLE FOR 
 
-Un bucle 'for' se utiliza para iterar sobre una secuencia (como una lista, tupla, conjunto o cadena de caracteres) o cualquier objeto iterable. Su estructura del 'for' es:
+Un bucle `for` se utiliza para iterar sobre una secuencia (como una lista, tupla, conjunto o cadena de caracteres) o cualquier objeto iterable. Su estructura del `for` es:
 
-'''
+```
 for elemento in secuencia:
     # Codigo dentro del for 
-'''
+```
 
 ## BUCLE WHILE 
 
-Un bucle 'while' se utiliza para repetir un bloque de código mientras se cumpla una condición específica. Su estructura del 'while' es:
+Un bucle `while` se utiliza para repetir un bloque de código mientras se cumpla una condición específica. Su estructura del `while` es:
 
-'''
+```
 while condicion:
     # Código dentro del while
-'''
+```
 
-Listas
+## Listas
 
-Una 'lista' es una colección ordenada y mutable de elementos. Esto significa que puedes almacenar una secuencia de elementos en una lista y modificarla según sea necesario. La estructura de una 'lista' es:
+Una `lista` es una colección ordenada y mutable de elementos. Esto significa que puedes almacenar una secuencia de elementos en una lista y modificarla según sea necesario. La estructura de una `lista` es:
 
-	'''
+
     nombre_de_lista = [elemento1, elemento2, elemento3, ...]
-    '''
+    
 
 ## Sentencia if - else 
 
-El 'if-else' se utiliza para tomar decisiones en función de una condición, esto ejecuta un bloque de código si la condición especificada es verdadera y otro bloque de código si la condición es falsa. La estructura de 'if-else' es:
+El `if-else` se utiliza para tomar decisiones en función de una condición, esto ejecuta un bloque de código si la condición especificada es verdadera y otro bloque de código si la condición es falsa. La estructura de `if-else` es:
 
-'''
+```
 	if condicion:
     # Código a ejecutar si la condición es verdadera
 	else:
     # Código a ejecutar si la condición es falsa
-'''
+```
 
 ## Operadores
 
-Los 'operadores' son símbolos especiales que se utilizan para realizar operaciones en variables y valores. Estos operadores se dividen en diferentes categorías según la función que realizan. Los operadores son:
+Los `operadores` son símbolos especiales que se utilizan para realizar operaciones en variables y valores. Estos operadores se dividen en diferentes categorías según la función que realizan. Los operadores son:
 
-	- ** Operadores aritmeticos: ** `+`, `-`, `*`, `/`, `//`,`%`
+	- Operadores aritmeticos: `+`, `-`, `*`, `/`, `//`,`%`
 	
-	Operadores de comparacion: `==`, `!=`, `<`, `>`, `<=`, `>=`.
+	- Operadores de comparacion: `==`, `!=`, `<`, `>`, `<=`, `>=`.
 	
-	Operadores logicos: `and`, `or`, `not`.
+	- Operadores logicos: `and`, `or`, `not`.
 
-	Operadores de asignacion: `=`, `+=`, `-=`.
+	- Operadores de asignacion: `=`, `+=`, `-=`.
 
 
 
