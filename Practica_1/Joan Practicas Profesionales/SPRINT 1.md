@@ -1,16 +1,4 @@
 # Sprint Report Semanal — Template
-
-## 📊 Estado General
-
-| Indicador | Estado |
-|-----------|--------|
-| **¿Estoy al día con el roadmap?** | 🟢 Sí / 🟡 Ligeramente retrasado / 🔴 Retrasado |
-| **¿Tengo bloqueos activos?** | 🟢 No / 🟡 Menores / 🔴 Críticos |
-| **¿Necesito ayuda?** | 🟢 No / 🟡 Sería útil / 🔴 Urgente |
-| **Confianza en la entrega de la fase** | 🟢 Alta / 🟡 Media / 🔴 Baja |
-
----
-
 ---
 
 # Ejemplo Completo (Para Referencia)
