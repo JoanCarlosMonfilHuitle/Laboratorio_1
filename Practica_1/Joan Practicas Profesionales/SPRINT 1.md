@@ -1,5 +1,5 @@
 # Sprint Report Semanal — Template
----
+
 # Ejemplo Completo (Para Referencia)
 
 ## Información
