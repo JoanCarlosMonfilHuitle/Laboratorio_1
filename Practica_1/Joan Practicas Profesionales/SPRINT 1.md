@@ -1,10 +1,6 @@
 # Sprint Report Semanal — Template
 ---
-
 # Ejemplo Completo (Para Referencia)
-
-> Así se ve un sprint report lleno. Úsenlo como guía.
-
 ---
 
 ## Información
@@ -12,34 +8,37 @@
 | Campo | Valor |
 |-------|-------|
 | **Proyecto** | GTI Digital Twin — Visualización de Drones |
-| **Semana** | #3 (Fecha: 10 al 14 de febrero) |
-| **Fase** | 1: Telemetry Foundation |
-| **Practicante** | Juan Pérez (Backend & Robotics) |
+| **Semana** | #1 (Fecha: 28 al 31 de Enero) |
+| **Fase** | 1: Onboarding e Investigación |
+| **Practicante** | Joan Carlos Monfil Huitle (Backend & Robotics) |
 
 ---
 
 ## ✅ Lo que hice esta semana
 
-- [x] **Story 1.3:** Implementé el Telemetry Bridge en Python
-  - Escucha UDP en puerto 14551 con pymavlink
-  - Parsea los 5 mensajes clave (HEARTBEAT, GLOBAL_POSITION_INT, ATTITUDE, VFR_HUD, SYS_STATUS)
-  - Normaliza datos y hace upsert a Supabase con rate limiting a 5Hz
-- [x] **Testing:** Conecté el bridge a SITL y verifiqué que los datos llegan a Supabase correctamente
-- [x] **Docs:** Escribí el README del bridge con instrucciones de setup
+- [x] **Story 1.3:** Me familiarice con la información que se encuentra en GFITHUB, la cual es la documentación correspondiente del proyecto, al igual leí el proyecto en cuestión con ello visualice las tareas que se deben de realizar. Tambien procedí a realizar algunas visitas de paginas las cuales son algunas paginas que me ayudaran a adquirir programas para realización de las primeras story dentro del primer epic. 
+  - Lectura de documentación del proyecto.
+  - Visualización de códigos de GTI satélites.
+  - Visitas de páginas web para programas a utilizar.
+  - Liberación de espacio (computadora personal).
+  - Lectura de programas y protocolos.
+  - Lectura del KIT de inicio y elaboracion de algunos tutoriales.
+- [x] **Testing:** Termine la mayoria del KIT de inicio, ya que personalemnte algunas ligas no estaban disponibles, pricipalmente los videos. 
+- [x] **Docs:** Escribí el SPRINT conforme al templete asignado.
 
 **PRs creados/mergeados:**
-- PR #7: `feat: implement telemetry bridge service` — Estado: en review
+- PR #: `N/A` — Estado: N/A
 
-**Horas aproximadas trabajadas:** 22h
+**Horas aproximadas trabajadas:** 20h
 
 ---
 
 ## 🎯 Lo que haré la próxima semana
 
-- [ ] **Story 1.3:** Resolver feedback del PR (si hay)
-- [ ] **Apoyo a Story 1.4:** Ayudar a María con la verificación de que los datos llegan al frontend
-- [ ] **Optimización:** Agregar structured logging al bridge
-- [ ] **Preparar** demo de pipeline completo para Sprint Review del viernes
+- [ ] **Story 1.3:** Terminar tutoriales del KIT de inicio (02 al 06 de Febrero).
+- [ ] **Apoyo a Story 1.4:** Ayudar a aclarar posibles dudas existentes sobre los protocolos y el setup del entorno de desarrollo. 
+- [ ] **Optimización:** Tener un setup y mejor entendimiento de los protocolos MAVLink y del ArduPilot SITL.
+- [ ] **Preparar** Programas y estructuras a utilizar para el primer epic.
 
 ---
 
@@ -47,23 +46,27 @@
 
 | Bloqueo | Impacto | Necesito |
 |---------|---------|----------|
-| SITL tarda ~2 min en arrancar cada vez | Ralentiza ciclos de prueba | Ver si hay forma de persistir el estado (menor, no crítico) |
+| Algunas ligas del Kit de inicio no funcionaban. | Ralentizo la comprencion de que se debe hacer. | Nuevas ligas o nuevos videos que expliquen lo se debe de hacer o instalar. |
+|Poco espacion en mi laptop. |No pude instalar los pragramas que necesito "AUN". | Liberar espacio e intalar de manera imediata los programas ya rchivos. |
+|No entendi del todo algunas rubros/carpetas. | Relantiza mi proceso de entendiemeinto. | Leer mas y entender mejor. |
 
 ---
 
 ## 🆘 Lo que necesito
 
-- [ ] Review del PR #7 (María o Victor)
-- [x] ~~Acceso al dashboard de Supabase~~ (resuelto el lunes)
+- [ ] Leer protocolos MAVLink.
+- [ ] Instalar programas. 
+- [ ] Releer algunas carpeatas y preguntar al CTO.
+- [ ] Tener mi setup con ArduPilot SITL.
 - [ ] Nada más — todo bien 👍
 
 ---
 
 ## 💡 Aprendizajes / Notas
 
-- pymavlink espera el heartbeat antes de poder recibir otros mensajes — esto no estaba documentado claramente, lo agregué al README
-- La latencia de Supabase para upserts es ~80-120ms, bien dentro del budget de 1s
-- Sugerencia: deberíamos agregar un health check endpoint al bridge para monitoreo
+- No todo sale como uno espera, ya que depende de que tan bueno seas en la tarea que realices o entiendas. 
+- Muchas tareas asutan y mas cuando no tienes ni idea de lo que esta pasando.
+- Sugerencia: Leer mas y tener orden en las tareas a realizar y administrar el tiempo requerido. 
 
 ---
 
@@ -71,10 +74,10 @@
 
 | Indicador | Estado |
 |-----------|--------|
-| **¿Estoy al día con el roadmap?** | 🟢 Sí |
-| **¿Tengo bloqueos activos?** | 🟢 No |
-| **¿Necesito ayuda?** | 🟢 No |
-| **Confianza en la entrega de la fase** | 🟢 Alta |
+| **¿Estoy al día con el roadmap?** | 🔴 No |
+| **¿Tengo bloqueos activos?** | 🟡 Si |
+| **¿Necesito ayuda?** | 🔴 Si |
+| **Confianza en la entrega de la fase** | 🟡 Media |
 
 ---
 
