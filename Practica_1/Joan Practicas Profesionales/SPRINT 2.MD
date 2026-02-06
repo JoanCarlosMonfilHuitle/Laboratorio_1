@@ -23,7 +23,7 @@
   - Creación de un índice.
   - Validación visual de datos almacenados correctamente.
 - [x] **Testing:** Termine el Sprint 1 de la primera semana, donde tuve que realizar muchas modificaciones y consultas independientes. 
-- [x] **Docs:** Cree la tabla `drone_telemetry`: [Supabase Project URL](https://vjpaexngmtlcsbzopvam.supabase.co) en Supabase (schema + RLS), y la `pagina princiapl` [Supabase para visualizar] (https://supabase.com/dashboard/project/vjpaexngmtlcsbzopvam).
+- [x] **Docs:** Cree la tabla `drone_telemetry`: [Supabase Project URL](https://vjpaexngmtlcsbzopvam.supabase.co) en Supabase (schema + RLS), y la `pagina princiapl` [Supabase para visualizar](https://supabase.com/dashboard/project/vjpaexngmtlcsbzopvam).
 .
 
 **PRs creados/mergeados:**
