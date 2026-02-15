@@ -179,6 +179,7 @@ try:
 except KeyboardInterrupt:
     print("\n🛑 Detenido por el usuario (Ctrl+C).")
 ```
+
 ## 🗄 Supabase SQL – Índices y Vistas (Sprint 2)
 
 A continuación se muestran los comandos SQL utilizados en Supabase para mejorar rendimiento, separar sesiones de telemetría y exponer endpoints “listos para consumo” (por ejemplo Mapbox).
