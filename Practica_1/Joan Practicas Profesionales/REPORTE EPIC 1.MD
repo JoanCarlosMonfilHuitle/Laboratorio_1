@@ -1,7 +1,13 @@
-# Reporte General — Integración Backend y Frontend  
-**Proyecto:** GTI Digital Twin  
-**Área:** Backend / Robotics + Frontend  
-**Horas aproximadas trabajadas:** 22 h
+# Report General Epic 1 (28 de enero - 1 de marzo)
+
+## Información
+
+| Campo | Valor |
+|-------|-------|
+| **Proyecto** | GTI Digital Twin — Visualización de Drones |
+| **Mes** | #1 (Fecha: 28 de Enero al 01 de Marzo) |
+| **Fase** | 1: Telemetry Foundation |
+| **Practicante** | Joan Carlos Monfil Huitle (Backend & Robotics) |
 
 ---
 
@@ -159,10 +165,8 @@ https://youtu.be/eT7p0d48PO0
 
 # Pull Requests
 
-PRs creados/mergeados:
-
-PR #: Códigos creados y modificados, mismos guardados por frontend  
-Estado: **En review / operational**
+**PRs creados/mergeados:**
+- PR #: Códigos creados y modificados, mismos guardados por frontend. - Estado: **En review / operational**
 
 ---
 
@@ -185,29 +189,39 @@ Estas imágenes aún no se han subido al repositorio, ya que se espera primero r
 
 | Bloqueos | Impacto | Necesito |
 |--------|--------|--------|
-| Problemas con algunas aplicaciones y desfases de información | Entorpeció algunas tareas iniciales | Analizar mejor los avances realizados |
+| Problemas con algunas aplicaciones y desfases de información | Entorpeció la sinergia de ambas partes | Analizar mejor los avances realizados |
 | Errores de código durante la integración | Retraso temporal en pruebas | Revisar configuraciones entre backend y frontend |
 
 ---
 
 # Lo que necesito
 
-- Revisar la tabla **drone_telemetry**
-- Verificar el funcionamiento del **Telemetry Bridge**
 - Comprender mejor el funcionamiento del **frontend**
 - Mejorar el manejo de **GitHub y branches**
 - Revisar variables entre backend y frontend para evitar conflictos
+- Oraginizar mejor las entregas y avances. 
+- Investigar y preguntar con mas precision. 
 
 ---
 
 # Aprendizajes / Notas
-
 Durante el desarrollo de este trabajo se obtuvieron varios aprendizajes importantes.
+- Uno de los aspectos más relevantes fue comprender cómo funcionan los **puentes de comunicación entre diferentes sistemas**, en este caso entre el simulador, el backend, la base de datos y el frontend.
+- También se observó que las tareas de integración pueden tomar más tiempo del esperado debido a los errores que pueden surgir entre módulos que funcionan de manera independiente.
+- Otro aprendizaje importante fue la necesidad de prestar mayor atención a las herramientas utilizadas durante el desarrollo y mantener una comunicación constante con el equipo para facilitar la resolución de problemas.
+- Finalmente, se observó que cuando se está concentrado resolviendo un problema técnico, el tiempo puede pasar rápidamente sin que se perciba, lo cual es común durante el desarrollo de software y sistemas complejos.
 
-Uno de los aspectos más relevantes fue comprender cómo funcionan los **puentes de comunicación entre diferentes sistemas**, en este caso entre el simulador, el backend, la base de datos y el frontend.
+---
 
-También se observó que las tareas de integración pueden tomar más tiempo del esperado debido a los errores que pueden surgir entre módulos que funcionan de manera independiente.
+## 📊 Estado General
 
-Otro aprendizaje importante fue la necesidad de prestar mayor atención a las herramientas utilizadas durante el desarrollo y mantener una comunicación constante con el equipo para facilitar la resolución de problemas.
+| Indicador | Estado |
+|-----------|--------|
+| **¿Estoy al día con el roadmap?** | 🟢 Sí |
+| **¿Tengo bloqueos activos?** | 🟡 Si |
+| **¿Necesito ayuda?** | 🟡 Si |
+| **Confianza en la entrega de la fase** | 🟢 Alta |
 
-Finalmente, se observó que cuando se está concentrado resolviendo un problema técnico, el tiempo puede pasar rápidamente sin que se perciba, lo cual es común durante el desarrollo de software y sistemas complejos.
+---
+
+*Template creado para el Proyecto Digital Twin GTI — Prácticas UDLAP 2026 — Backend (Joan Carlos Monfil Huitle)*
