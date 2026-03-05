@@ -1,102 +1,153 @@
-# Sprint Report Semanal
-
-**Proyecto:** GTI Digital Twin — Visualización de Drones  
-**Periodo:** 24 de febrero – 28 de febrero  
-**Fase:** Telemetry Foundation  
-**Área:** Backend & Robotics  
-**Practicante:** Joan Carlos Monfil Huitle
+# Reporte General — Integración Backend y Frontend  
+**Proyecto:** GTI Digital Twin  
+**Área:** Backend / Robotics + Frontend  
+**Horas aproximadas trabajadas:** 22 h
 
 ---
 
-# Información
+# Introducción
 
-| Campo | Valor |
-|------|------|
-| Proyecto | GTI Digital Twin — Visualización de Drones |
-| Semana | #4 (24 al 28 de febrero) |
-| Fase | Telemetry Foundation |
-| Practicante | Joan Carlos Monfil Huitle |
-| Área | Backend & Robotics |
+Este reporte describe de manera general el trabajo realizado durante el desarrollo e integración del sistema **GTI Digital Twin**, específicamente en la unión del **backend de telemetría** con el **frontend de visualización**.
+
+El objetivo principal fue validar que los datos generados por el simulador de vuelo puedan ser capturados por el backend, almacenados correctamente en la base de datos y posteriormente visualizados en el frontend dentro de un mapa en tiempo real.
+
+Durante este proceso se realizaron múltiples pruebas, ajustes de código y mejoras en la organización del repositorio para asegurar que el sistema funcione correctamente como una arquitectura integrada.
 
 ---
 
-# Resumen Ejecutivo
+# Pipeline del sistema
 
-Durante este sprint se logró la **integración funcional entre el backend de telemetría y el frontend de visualización del Digital Twin**.
+El sistema Digital Twin funciona mediante un flujo continuo de datos que conecta el simulador del dron con el frontend de visualización.
 
-El trabajo se centró en validar el funcionamiento completo del sistema conectando los componentes que previamente se habían desarrollado de manera independiente.
+```mermaid
+flowchart LR
+    A[ArduPilot SITL] -->|MAVLink UDP| B[Telemetry Bridge]
+    A -->|MAVLink UDP| C[QGroundControl]
+    B -->|Insert snapshot| D[Supabase Database]
+    D --> E[Supabase Views]
+    E --> F[Frontend Digital Twin]
+    F --> G[Mapa con posición del dron]
+```
 
-En términos generales se logró:
-
-- Consolidar el **pipeline completo desde el simulador (SITL) hasta la visualización en el mapa**.
-- Validar la **correcta ingesta de datos en Supabase**.
-- Confirmar el **consumo de datos desde el frontend**.
-- Visualizar en tiempo real la **posición actual del dron en el mapa**.
-- Confirmar el funcionamiento **end-to-end del sistema**.
-
-Este sprint representó un avance importante al conectar oficialmente el backend con el frontend y dejar preparada la base del sistema para futuras mejoras.
-
----
-
-# Arquitectura del sistema
-
-El flujo general del sistema validado durante este sprint se puede representar de la siguiente manera:
-
-
-Simulador (SITL)
-      ↓
-MAVLink Telemetry
-      ↓
-Telemetry Bridge (Python + pymavlink)
-      ↓
-Supabase (Base de datos)
-      ↓
-Frontend Digital Twin
-      ↓
-Visualización en mapa en tiempo real
-
-Este pipeline permite capturar datos de telemetría del dron y mostrarlos dentro de la interfaz del Digital Twin.
+Este pipeline permite capturar la telemetría generada por el simulador, procesarla mediante el bridge de telemetría y almacenarla en la base de datos para posteriormente ser consumida por el frontend.
 
 ---
 
-# Lo que hice esta semana
+# Arquitectura general del sistema
 
-Durante este sprint se realizaron diversas actividades enfocadas en la integración del backend con el frontend y la validación del flujo de telemetría del sistema.
+La arquitectura del sistema se compone de cuatro módulos principales:
 
-Actividades realizadas:
+### 1. Simulador (SITL)
+
+El simulador **ArduPilot SITL** genera la telemetría del dron utilizando el protocolo **MAVLink**.
+
+Este simulador permite reproducir el comportamiento de un dron real sin necesidad de hardware físico.
+
+---
+
+### 2. Telemetry Bridge (Backend)
+
+El **Telemetry Bridge** es un script desarrollado en Python utilizando la librería **pymavlink**.
+
+Este módulo se encarga de:
+
+- Conectarse al flujo MAVLink
+- Escuchar mensajes de telemetría
+- Consolidar los datos recibidos
+- Insertar snapshots en la base de datos Supabase
+
+Mensajes MAVLink utilizados:
+
+- HEARTBEAT
+- ATTITUDE
+- GLOBAL_POSITION_INT
+- VFR_HUD
+- SYS_STATUS
+
+---
+
+### 3. Base de datos (Supabase)
+
+La base de datos Supabase almacena la telemetría del sistema mediante la tabla:
+
+```
+drone_telemetry
+```
+
+Además se utilizan vistas para facilitar el consumo de datos por el frontend:
+
+```
+latest_snapshot
+latest_snapshot_mapbox
+```
+
+Estas vistas permiten obtener el estado más reciente del dron sin necesidad de procesar toda la tabla de telemetría.
+
+---
+
+### 4. Frontend (Digital Twin)
+
+El frontend consume los datos almacenados en Supabase para visualizar la posición del dron en un mapa.
+
+Entre sus funciones principales se encuentran:
+
+- Mostrar la ubicación del dron
+- Actualizar la posición en tiempo real
+- Representar el estado actual del sistema
+
+---
+
+# Lo que se hizo
+
+El trabajo realizado se centró principalmente en lograr la **integración funcional entre el backend y el frontend** del sistema Digital Twin.
+
+Durante este proceso se realizaron las siguientes actividades:
 
 - Implementación de la conexión entre backend y frontend.
-- Pruebas individuales de cada módulo.
-- Integración progresiva de ambos sistemas.
-- Corrección de errores detectados durante la integración.
-- Ajustes en variables y configuraciones compartidas entre backend y frontend.
+- Validación del flujo completo de datos desde el simulador hasta la interfaz visual.
+- Corrección de errores encontrados durante la integración.
+- Ajuste de variables y configuraciones entre backend y frontend.
+- Organización del repositorio y documentación técnica del sistema.
 
-Estas actividades permitieron validar que los datos generados por el simulador pueden ser capturados, almacenados y visualizados correctamente.
+Con esta integración se logró que el frontend pueda **recibir los datos provenientes del backend y mostrarlos en pantalla**, permitiendo visualizar la posición del dron en el mapa en tiempo real.
 
 ---
 
 # Testing
 
-Se realizaron diferentes pruebas y modificaciones a los códigos creados e implementados.
+Se realizaron diferentes pruebas y modificaciones a los códigos creados e implementados, así como la depuración de errores significativos que se presentaron durante el desarrollo.
 
-Principales pruebas realizadas:
+Las pruebas realizadas incluyen:
 
-- Reinicio completo del sistema desde cero (SITL + QGroundControl + Bridge).
-- Verificación de generación automática de `run_id`.
-- Reinicio del frontend para validar actualización dinámica.
-- Validación de actualización en tiempo real en Supabase.
-- Confirmación de sincronización entre backend y frontend.
-- Pruebas de detención limpia del sistema mediante `Ctrl + C`.
+- Reinicio completo del sistema desde cero  
+  *(SITL + QGC + Telemetry Bridge)*.
 
-Estas pruebas permitieron confirmar el funcionamiento correcto del pipeline completo del sistema.
+- Verificación de generación automática de **run_id**.
+
+- Reinicio de la página del frontend y reinicio completo del código para realizar múltiples pruebas.
+
+- Validación de actualización en tiempo real en **Supabase**.
+
+- Validación de actualización en tiempo real de los datos entre **backend y frontend**.
+
+- Pruebas de detención limpia mediante **Ctrl + C**.
+
+Estas pruebas permitieron confirmar que el flujo de datos funciona correctamente desde el simulador hasta la visualización en el frontend.
 
 ---
 
-# Documentación y recursos utilizados
+# Repositorio y documentación
 
-Durante el desarrollo del sprint también se revisaron recursos técnicos y documentación relacionada con la arquitectura del sistema.
+Durante el proceso también se trabajó en la documentación del sistema y en la organización del repositorio.
 
-Repositorio con documentación del backend:
+La documentación desarrollada describe:
+
+- Arquitectura del backend
+- Flujo de telemetría
+- Funcionamiento del Telemetry Bridge
+- Integración entre backend y frontend
+
+Repositorio del proyecto:
 
 https://github.com/vimaguelo/gti-satelites/tree/docs/backend-robotics-architecture/docs/digital-twin-backend-robotics
 
@@ -106,85 +157,57 @@ https://youtu.be/eT7p0d48PO0
 
 ---
 
-# PRs creados / mergeados
+# Pull Requests
 
-PR: Códigos creados y modificados para integración con frontend  
-Estado: En revisión / operativo
+PRs creados/mergeados:
 
----
-
-# Horas aproximadas trabajadas
-
-22 horas
+PR #: Códigos creados y modificados, mismos guardados por frontend  
+Estado: **En review / operational**
 
 ---
 
-# Lo que haré la próxima semana
+# Trabajo planeado para la próxima semana
 
-Durante el siguiente sprint se planea continuar con el desarrollo del proyecto y mejorar la organización del repositorio.
+Para las siguientes etapas del proyecto se planea continuar con el desarrollo y mejora del sistema.
 
-Actividades planeadas:
+Entre las actividades planeadas se encuentran:
 
-- Realizar pruebas adicionales de integración Backend/Robotics.
-- Apoyar en Story 1.4 para aclarar dudas sobre backend y frontend.
-- Continuar familiarizándome con herramientas del proyecto:
+- Continuar realizando pruebas de integración entre backend y frontend.
+- Analizar posibles mejoras en el flujo de telemetría.
+- Mejorar la documentación del proyecto.
+- Actualizar algunas carpetas del repositorio agregando imágenes del sistema en funcionamiento.
 
-MAVLink  
-SITL  
-QGroundControl  
-WSL  
-Supabase  
-Antigravity  
-GitHub  
-
-También se planea actualizar algunas carpetas del repositorio agregando imágenes del sistema en ejecución.
-
-Estas imágenes aún no se han subido debido a que primero se espera obtener la aprobación del branch actual. Una vez validado el branch, se subirán imágenes que muestran los resultados obtenidos durante las pruebas.
+Estas imágenes aún no se han subido al repositorio, ya que se espera primero recibir una revisión del branch actual para determinar si es necesario realizar ajustes antes de integrar evidencia visual del sistema.
 
 ---
 
 # Bloqueos / Impedimentos
 
-| Bloqueo | Impacto | Necesito |
+| Bloqueos | Impacto | Necesito |
 |--------|--------|--------|
-| Problemas con algunas aplicaciones y desfases de información | Entorpeció algunas tareas | Analizar mejor el trabajo realizado |
-| Errores de código | Retrasos en integración | Revisar configuraciones entre módulos |
+| Problemas con algunas aplicaciones y desfases de información | Entorpeció algunas tareas iniciales | Analizar mejor los avances realizados |
+| Errores de código durante la integración | Retraso temporal en pruebas | Revisar configuraciones entre backend y frontend |
 
 ---
 
 # Lo que necesito
 
-- Revisar tabla `drone_telemetry`.
-- Verificar el Telemetry Bridge (Python + pymavlink).
-- Entender mejor el funcionamiento del frontend.
-- Mejorar el manejo de GitHub respecto a branches.
-- Revisar variables entre backend y frontend para evitar conflictos.
+- Revisar la tabla **drone_telemetry**
+- Verificar el funcionamiento del **Telemetry Bridge**
+- Comprender mejor el funcionamiento del **frontend**
+- Mejorar el manejo de **GitHub y branches**
+- Revisar variables entre backend y frontend para evitar conflictos
 
 ---
 
 # Aprendizajes / Notas
 
-Durante este sprint se obtuvieron varios aprendizajes importantes.
+Durante el desarrollo de este trabajo se obtuvieron varios aprendizajes importantes.
 
-- Las tareas pueden tomar más tiempo del esperado, especialmente durante la integración de sistemas.
-- Comprender los puentes de comunicación entre módulos es fundamental.
-- Es útil entender el trabajo del resto del equipo para comprender el sistema completo.
-- Es importante considerar los errores y el tiempo invertido en resolverlos.
+Uno de los aspectos más relevantes fue comprender cómo funcionan los **puentes de comunicación entre diferentes sistemas**, en este caso entre el simulador, el backend, la base de datos y el frontend.
 
-También se observó que cuando se está concentrado resolviendo problemas técnicos, el tiempo puede pasar muy rápido sin que se perciba.
+También se observó que las tareas de integración pueden tomar más tiempo del esperado debido a los errores que pueden surgir entre módulos que funcionan de manera independiente.
 
----
+Otro aprendizaje importante fue la necesidad de prestar mayor atención a las herramientas utilizadas durante el desarrollo y mantener una comunicación constante con el equipo para facilitar la resolución de problemas.
 
-# Estado General
-
-| Indicador | Estado |
-|--------|--------|
-| ¿Estoy al día con el roadmap? | 🟢 Sí |
-| ¿Tengo bloqueos activos? | 🟡 Sí |
-| ¿Necesito ayuda? | 🟡 Sí |
-| Confianza en la entrega de la fase | 🟢 Alta |
-
----
-
-Template creado para el Proyecto Digital Twin GTI — Prácticas UDLAP 2026
-
+Finalmente, se observó que cuando se está concentrado resolviendo un problema técnico, el tiempo puede pasar rápidamente sin que se perciba, lo cual es común durante el desarrollo de software y sistemas complejos.
