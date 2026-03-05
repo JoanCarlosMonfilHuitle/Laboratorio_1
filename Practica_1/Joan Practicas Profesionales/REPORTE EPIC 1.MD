@@ -21,7 +21,7 @@ Durante este proceso se realizaron múltiples pruebas, ajustes de código y mejo
 
 ---
 
-# Pipeline del sistema
+# 📁 Pipeline del sistema
 
 El sistema Digital Twin funciona mediante un flujo continuo de datos que conecta el simulador del dron con el frontend de visualización.
 
@@ -39,7 +39,7 @@ Este pipeline permite capturar la telemetría generada por el simulador, procesa
 
 ---
 
-# Arquitectura general del sistema
+# 🖥️ Arquitectura general del sistema
 
 La arquitectura del sistema se compone de cuatro módulos principales:
 
@@ -51,7 +51,7 @@ Este simulador permite reproducir el comportamiento de un dron real sin necesida
 
 ---
 
-### 2. Telemetry Bridge (Backend)
+### 2.  Telemetry Bridge (Backend)
 
 El **Telemetry Bridge** es un script desarrollado en Python utilizando la librería **pymavlink**.
 
@@ -103,7 +103,7 @@ Entre sus funciones principales se encuentran:
 
 ---
 
-# Lo que se hizo
+# ✅ Lo que se hizo
 
 El trabajo realizado se centró principalmente en lograr la **integración funcional entre el backend y el frontend** del sistema Digital Twin.
 
@@ -119,7 +119,7 @@ Con esta integración se logró que el frontend pueda **recibir los datos proven
 
 ---
 
-# Testing
+# 🎯 Testing
 
 Se realizaron diferentes pruebas y modificaciones a los códigos creados e implementados, así como la depuración de errores significativos que se presentaron durante el desarrollo.
 
@@ -142,7 +142,7 @@ Estas pruebas permitieron confirmar que el flujo de datos funciona correctamente
 
 ---
 
-# Repositorio y documentación
+# 📄 Repositorio y documentación
 
 Durante el proceso también se trabajó en la documentación del sistema y en la organización del repositorio.
 
@@ -163,14 +163,14 @@ https://youtu.be/eT7p0d48PO0
 
 ---
 
-# Pull Requests
+# 🗒️ Pull Requests
 
 **PRs creados/mergeados:**
 - PR #: Códigos creados y modificados, mismos guardados por frontend. - Estado: **En review / operational**
 
 ---
 
-# Trabajo planeado para la próxima semana
+# 🗓️ Trabajo planeado para la próxima semana
 
 Para las siguientes etapas del proyecto se planea continuar con el desarrollo y mejora del sistema.
 
@@ -185,7 +185,7 @@ Estas imágenes aún no se han subido al repositorio, ya que se espera primero r
 
 ---
 
-# Bloqueos / Impedimentos
+# 🚧 Bloqueos / Impedimentos
 
 | Bloqueos | Impacto | Necesito |
 |--------|--------|--------|
@@ -194,7 +194,7 @@ Estas imágenes aún no se han subido al repositorio, ya que se espera primero r
 
 ---
 
-# Lo que necesito
+# 🆘 Lo que necesito
 
 - Comprender mejor el funcionamiento del **frontend**
 - Mejorar el manejo de **GitHub y branches**
@@ -204,7 +204,7 @@ Estas imágenes aún no se han subido al repositorio, ya que se espera primero r
 
 ---
 
-# Aprendizajes / Notas
+# 💡 Aprendizajes / Notas
 Durante el desarrollo de este trabajo se obtuvieron varios aprendizajes importantes.
 - Uno de los aspectos más relevantes fue comprender cómo funcionan los **puentes de comunicación entre diferentes sistemas**, en este caso entre el simulador, el backend, la base de datos y el frontend.
 - También se observó que las tareas de integración pueden tomar más tiempo del esperado debido a los errores que pueden surgir entre módulos que funcionan de manera independiente.
