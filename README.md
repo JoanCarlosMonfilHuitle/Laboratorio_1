@@ -3,3 +3,4 @@ Aqui encontrara diferentes practicas realizadaas en el cuerso de Diseño De Sist
 # Primer Practica (Introduccion a Python y UBUNTU)
 La finalidad de la practica es que el estudiante se familiarice con el lenguaje Python, por lo cual se ha dejado realizar 6 codigos diferentes, donde se deben de realizar con el lenguaje Python, esto paras que se introduzca y aprenda el alumno sobre Python. 
 
+Prueba de flujo PR (fecha: 2026-02-24).
